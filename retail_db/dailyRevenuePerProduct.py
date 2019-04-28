@@ -1,6 +1,6 @@
 from pyspark import SparkContext, SparkConf
 
-conf = SparkConf().setAppName('dailyRevenuePerProduct').setMaster('local[4]')
+conf = SparkConf().setAppName('dailyRevenuePerProduct').setMaster('yarn-client')
 sc = SparkContext(conf=conf)
 
 orders = sc.textFile("/public/retail_db/orders",10)
